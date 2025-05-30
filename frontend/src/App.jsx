@@ -9,7 +9,7 @@ export default function App() {
   useEffect(() => {
     async function fetchLeagues() {
       try {
-        const res = await axios.get("https://matches-frontend-eight.vercel.app/leagues");
+        const res = await axios.get("https://matches-backend-drab.vercel.app/leagues");
         setLeagues(res.data);
       } catch (err) {
         console.error("Error fetching leagues:", err);
@@ -21,7 +21,7 @@ export default function App() {
   async function fetchMatches(leagueId) {
     try {
       const res = await axios.get(
-        `https://matches-frontend-eight.vercel.app/matches?leagueId=${leagueId}`
+        `https://matches-backend-drab.vercel.app/matches?leagueId=${leagueId}`
       );
       console.log(res);
       setMatches(res.data);
